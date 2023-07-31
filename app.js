@@ -44,6 +44,11 @@ app.use(helmet());
 app.use(hpp());
 app.use(xss());
 
+// * Root Route
+app.get('/', (req, res) => {
+  res.send('Welcome to the Instamern API');
+});
+
 // * Routers
 app.use("/instamern/users", userRouters);
 app.use("/instamern/posts", postRouters);
