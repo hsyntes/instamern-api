@@ -17,7 +17,7 @@ const sendToken = (res, statusCode, user, message) => {
       Date.now() + parseInt(process.env.JWT_EXPIRES_IN) * 24 * 60 * 60 * 1000
     ),
     // httpOnly: true,
-    // secure: true,
+    secure: false,
     sameSite: "lax",
   });
 
