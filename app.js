@@ -17,7 +17,7 @@ const app = express();
 
 // * Handle Cross-Origin Middleware
 // app.use(cors());
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: "http://localhost:3000", credentials: false }));
 
 // * Pug engine
 app.set("view engine", "pug");
