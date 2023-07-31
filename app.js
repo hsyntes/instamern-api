@@ -16,10 +16,6 @@ const errorController = require("./controllers/errorController");
 const app = express();
 
 // * Handle Cross-Origin Middleware
-// app.use(cors());
-// app.use(cors({ origin: "http://localhost:3000", credentials: true }));
-
-
 const allowedOrigins = ['http://localhost:3000'];
 
 const corsOptions = {
