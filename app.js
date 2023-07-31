@@ -17,7 +17,23 @@ const app = express();
 
 // * Handle Cross-Origin Middleware
 // app.use(cors());
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+// app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+
+
+const allowedOrigins = ['http://localhost:3000'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 // * Pug engine
 app.set("view engine", "pug");
