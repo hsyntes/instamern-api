@@ -18,7 +18,7 @@ const sendToken = (res, statusCode, user, message) => {
     ),
     httpOnly: true,
     // secure: false,
-    // sameSite: "lax",
+    sameSite: "lax",
   });
 
   user.password = undefined;
