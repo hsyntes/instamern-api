@@ -16,14 +16,17 @@ const errorController = require("./controllers/errorController");
 const app = express();
 
 // * Handle Cross-Origin Middleware
-const allowedOrigins = ['http://localhost:3000'];
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://instamern.netlify.app/",
+];
 
 const corsOptions = {
   origin: function (origin, callback) {
     if (allowedOrigins.includes(origin) || !origin) {
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'));
+      callback(new Error("Not allowed by CORS"));
     }
   },
   credentials: true,
@@ -57,8 +60,8 @@ app.use(hpp());
 app.use(xss());
 
 // * Root Route
-app.get('/', (req, res) => {
-  res.send('Welcome to the InstaMERN API');
+app.get("/", (req, res) => {
+  res.send("Welcome to the InstaMERN API");
 });
 
 // * Routers
