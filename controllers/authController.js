@@ -12,14 +12,13 @@ const sendToken = (res, statusCode, user, message) => {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
 
-  // ! Will be changed in production
   res.cookie("jsonwebtoken", token, {
     expires: new Date(
       Date.now() + parseInt(process.env.JWT_EXPIRES_IN) * 24 * 60 * 60 * 1000
     ),
-    httpOnly: true,
-    secure: true,
-    sameSite: "none",
+    // httpOnly: true,
+    // secure: true,
+    sameSite: "lax",
   });
 
   user.password = undefined;
