@@ -18,7 +18,7 @@ const app = express();
 // * Handle Cross-Origin Middleware
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://instamern.netlify.app/",
+  "https://instamern.netlify.app",
 ];
 
 const corsOptions = {
