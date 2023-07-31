@@ -17,7 +17,7 @@ const app = express();
 
 // * Handle Cross-Origin Middleware
 // app.use(cors());
-app.use(cors({ origin: "http://localhost:3000", credentials: false }));
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
 // * Pug engine
 app.set("view engine", "pug");
@@ -46,7 +46,7 @@ app.use(xss());
 
 // * Root Route
 app.get('/', (req, res) => {
-  res.send('Welcome to the Instamern API');
+  res.send('Welcome to the InstaMERN API');
 });
 
 // * Routers
