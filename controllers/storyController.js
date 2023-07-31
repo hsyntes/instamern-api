@@ -6,27 +6,31 @@ const AWS = require("../aws-config");
 exports.getStories = async (req, res, next) => {
   //   const stories = await Story.find().limit(15);
 
-  const stories = await Story.aggregate([
-    {
-      $group: {
-        _id: "$storiedBy",
-        stories: {
-          $push: {
-            photo: "$photo",
-            storyId: "$_id",
+  try {
+    const stories = await Story.aggregate([
+      {
+        $group: {
+          _id: "$storiedBy",
+          stories: {
+            $push: {
+              photo: "$photo",
+              storyId: "$_id",
+            },
           },
         },
       },
-    },
-  ]);
+    ]);
 
-  res.status(200).json({
-    status: "success",
-    results: stories.length,
-    data: {
-      stories,
-    },
-  });
+    res.status(200).json({
+      status: "success",
+      results: stories.length,
+      data: {
+        stories,
+      },
+    });
+  } catch (e) {
+    next(e);
+  }
 };
 
 exports.postStory = async (req, res, next) => {
