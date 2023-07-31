@@ -1,0 +1,62 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Lato&family=Norican&display=swap' rel='stylesheet')
+  title Email Template
+  style.
+    html {
+    font-family: "lato", sans-serif;
+    }
+    body,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+    margin: 0;
+    padding: 0;
+    }
+    p {
+      font-size: 20px;
+    }
+    body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    }
+    .banner {
+    color: #fff;
+    background-color: #068fff;
+    }
+    .content,
+    .footer {
+    padding: 24px;
+    }
+center
+  h1(style='text-align: center; padding: 18px 0; margin-bottom: 0px; background-color: #212121;')
+    img(src='https://instamern.s3.amazonaws.com/logo/logo.png' width='64' alt='Logo')
+.banner(style='padding: 12px 0;')
+  center
+    h2 #{subject}
+.content
+  p Hello, #{firstname} 👋
+  br
+  p #{text}
+  br
+  p Huseyin Ates
+  p(style='font-size: 14px') Software Engineer
+  p(style='font-size: 14px') Full Stack MERN Developer
+  br
+  a(href=`${url}` style='padding: 12px 20px; text-decoration: none; text-align: center; background-color: #068fff; color: #fff; border-radius: 10px; font-weight: 600;')
+    span #{subject}
+.footer
+  h4 Contact
+  br
+  a(href='https://github.com/hsyntes' target='_blank')
+    img(width='30' height='30' src='https://img.icons8.com/ios-glyphs/30/github.png' alt='github')
+  a(href='https://linkedin.com/in/hsyntes' target='_blank')
+    img(width='30' height='30' src='https://img.icons8.com/ios-glyphs/30/linkedin.png' alt='linkedin')
