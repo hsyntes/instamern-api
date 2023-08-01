@@ -2,6 +2,8 @@
 
 The InstaMERN backend API powers the InstaMERN application, a full-stack social media platform similar to Instagram. This API allows users to register, log in, create posts & story, add comments, follow & unfollow, **AWS Cloud Computing** for storage & sending emals and more.
 
+[![InstaMERN](https://github.com/hsyntes/instamern/blob/main/public/logo.png)](https://instamern.netlify.app)
+
 ## AWS Cloud Integration
 
 The InstaMERN backend leverages **AWS Cloud Services** for various functionalities. Here are the AWS services used:
