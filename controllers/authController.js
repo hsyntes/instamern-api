@@ -47,7 +47,7 @@ exports.signup = async (req, res, next) => {
 
     if (user) {
       try {
-        await new Email(user, "http://localhost:3000/").sendWelcome();
+        await new Email(user, "https://instamern.netlify.app/").sendWelcome();
       } catch (e) {
         console.log("Email is not verified.");
       }
@@ -128,7 +128,8 @@ exports.forgotPassword = async (req, res, next) => {
     try {
       await new Email(
         user,
-        `${req.protocol}://${req.get("host")}/reset-password/${token}`
+        // `${req.protocol}://${req.get("host")}/reset-password/${token}`
+        `https://instamern.netlify.app/reset-password/${token}`
       ).sendResetPassword();
 
       res.status(200).json({
