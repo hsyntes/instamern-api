@@ -18,7 +18,7 @@ const sendToken = (res, statusCode, user, message) => {
     ),
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
+    sameSite: "Strict",
   });
 
   user.password = undefined;
