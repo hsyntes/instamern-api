@@ -2,6 +2,18 @@
 
 The InstaMERN backend API powers the InstaMERN application, a full-stack social media platform similar to Instagram. This API allows users to register, log in, create posts & story, add comments, follow & unfollow, **AWS Cloud Computing** for storage & sending emals and more.
 
+## AWS Cloud Integration
+
+The InstaMERN backend leverages **AWS Cloud Services** for various functionalities. Here are the AWS services used:
+
+1. Amazon S3
+
+   Description: Amazon S3 is used for storing and serving user-uploaded images, including post images and profile pictures.
+
+2. Amazon SES
+
+   Decription: Amazon SES is used for sending emails to users in order to reset passwords & emails by secure token.
+
 ## Features
 
 - Signup & login with secure token
@@ -87,9 +99,9 @@ Sotarage users' materials suchs as posts, profile pictures, stories in **AWS Clo
 
 `GET /instamern/posts`: Get all posts.
 
-`GET /instamern/posts//:id`: Get a single post by ID.
+`GET /instamern/posts/:id`: Get a single post by ID.
 
-`POST /instamern/posts/upload`: Create a new post by secure token
+`POST /instamern/posts/upload`: Create a new post by secure token and storage it to **AWS Cloud**
 
 `POST /instamern/posts/like/:id`: Like a post by current user's secure token.
 
@@ -101,7 +113,7 @@ Sotarage users' materials suchs as posts, profile pictures, stories in **AWS Clo
 
 `GET /instamern/stories`: Get all stories.
 
-`POST /instamern/stories/upload`: Add a new story by current user's secure token.
+`POST /instamern/stories/upload`: Add a new story by current user's secure token and save it to **AWS Cloud**
 
 ## Run Locally
 
