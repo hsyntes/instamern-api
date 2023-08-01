@@ -5,21 +5,21 @@ The InstaMERN backend API powers the InstaMERN application, a full-stack social 
 ## Features
 
 - Signup & login with secure token
+- Uploading posts/stories to **AWS Cloud** & load them from **MongoDB**
+- Sending reset links to users' email address with **AWS SES** to reset & update their password more secure
+- Structured users'data more secure with **mongoose Data Modelling** both **referencing** & **embedded**
+- **Encrypting** & **hashing** passwords
+- Email validator via both backend API & **AWS Cloud**
+- Verifying **JSON Web Token**
 - Security HTTP headers with **helmet**
 - Rate limitting from the same **IP/API**
 - Data Sanitization against **NoSQL** injection
 - Data Sanitization against **XSS**
 - Maganing & catching errors globally with **middleware** functions
-- Sending token to users' email address with **AWS** to reset & update their password more secure
-- Uploading posts to **AWS Cloud** & load from **MongoDB**
 - Generate expired token
-- Verifying **JSON Web Token**
 - Sending JWT via **cokie**
-- **Encrypting** & **hashing** passwords
 - Restrict/protect some features by secure token
-- Email validator
 - Dedicate environments to **development** and **production**
-- Structured users'data more secure with **mongoose Data Modelling**
 
 ## Base URL
 
@@ -29,27 +29,23 @@ The base URL for the backend API is https://instamern-3cda0fa07039.herokuapp.com
 
 Authentication is the process of verifying the identity of a user or system. In the context of a back-end application, it ensures that only authorized users can access protected resources. Here are some key considerations for implementing authentication:
 
-## User Registration
+### User Registration
 
 Implement a user registration process that collects necessary information, such as username, email, and password. Ensure that password requirements, such as length and complexity, are enforced.
 
-## Login
+### Login
 
 Provide a secure login mechanism using sessions or tokens. Validate user credentials against stored data and generate authentication tokens or session cookies for subsequent requests.
-
-## Authentication Middleware
-
-Use middleware to authenticate requests. This middleware should check for valid authentication tokens, verify session cookies, or implement other authentication mechanisms.
 
 ## Authorization
 
 Authorization determines what actions a user can perform within an application. It ensures that authenticated users have the necessary permissions to access or modify specific resources. Consider the following when implementing authorization
 
-## Role-Based Access Control
+### Role-Based Access Control
 
 Implement role-based access control (RBAC) to assign different permissions to different user roles. For example, an administrator role might have more privileges than a regular user role.
 
-## Resource-Based Authorization
+### Resource-Based Authorization
 
 Control access to specific resources based on user roles and ownership. Ensure that users can only access resources they are authorized to view or modify.
 
@@ -69,11 +65,35 @@ Enable secure communication between clients and the server using HTTPS/TLS. This
 
 Implement secure session management to track user sessions and prevent session-related attacks such as session hijacking or fixation. Use secure session storage mechanisms, such as server-side storage or encrypted client-side storage (e.g., signed cookies), and regenerate session IDs after user authentication or privilege changes.
 
+## Storage
+
+Sotarage users' materials suchs as posts, profile pictures, stories in **AWS Cloud Object Storage**
+
 ## END Points
 
 #### Authentication
 
-`POST /instamern/auth/register`: Register a new user.
+`POST /instamern/users/signup`: Register a new user.
+`POST /instamern/users/login`: Log in an existing user.
+
+### User Profile
+
+`GET /instamern/users/username/:username`: Get user profile by username.
+`GET /instamern/users/authorization/current-user`: Get currently logged-in user by secure token.
+
+### Posts
+
+`GET /instamern/posts`: Get all posts.
+`GET /instamern/posts//:id`: Get a single post by ID.
+`POST /instamern/posts/upload`: Create a new post by secure token
+`POST /instamern/posts/like/:id`: Like a post by current user's secure token.
+`POST /instamern/posts/comment/:id`: Add a comment to a post by current user's secure token.
+`DELETE /instamern/posts/delete/:id`: Delete a post by current user's secure token.
+
+### Stories
+
+`GET /instamern/stories`: Get all stories.
+`POST /instamern/stories/upload`: Add a new story by current user's secure token.
 
 ## Run Locally
 
@@ -95,7 +115,7 @@ Install dependencies
   npm install
 ```
 
-Start the server on **production** environment
+Start the server on **production** environment as default.
 
 ```bash
   npm start
