@@ -1,6 +1,6 @@
 # Instamern Backend API
 
-The InstaMERN backend API powers the InstaMERN application, a full-stack social media platform similar to Instagram. This API allows users to register, log in, create posts, like posts, add comments, view user profiles, and more.
+The InstaMERN backend API powers the InstaMERN application, a full-stack social media platform similar to Instagram. This API allows users to register, log in, create posts & story, add comments, follow & unfollow, **AWS Cloud Computing** for storage & sending emals and more.
 
 ## Features
 
