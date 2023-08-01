@@ -1,7 +1,6 @@
 const User = require("../models/User");
 const Email = require("../classes/Email");
 const ErrorProvider = require("../classes/ErrorProvider");
-// const cookie = require("cookie");
 const jsonwebtoken = require("jsonwebtoken");
 const validator = require("validator");
 const crypto = require("crypto");
