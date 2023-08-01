@@ -74,25 +74,33 @@ Sotarage users' materials suchs as posts, profile pictures, stories in **AWS Clo
 #### Authentication
 
 `POST /instamern/users/signup`: Register a new user.
+
 `POST /instamern/users/login`: Log in an existing user.
 
 ### User Profile
 
 `GET /instamern/users/username/:username`: Get user profile by username.
+
 `GET /instamern/users/authorization/current-user`: Get currently logged-in user by secure token.
 
 ### Posts
 
 `GET /instamern/posts`: Get all posts.
+
 `GET /instamern/posts//:id`: Get a single post by ID.
+
 `POST /instamern/posts/upload`: Create a new post by secure token
+
 `POST /instamern/posts/like/:id`: Like a post by current user's secure token.
+
 `POST /instamern/posts/comment/:id`: Add a comment to a post by current user's secure token.
+
 `DELETE /instamern/posts/delete/:id`: Delete a post by current user's secure token.
 
 ### Stories
 
 `GET /instamern/stories`: Get all stories.
+
 `POST /instamern/stories/upload`: Add a new story by current user's secure token.
 
 ## Run Locally
