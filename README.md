@@ -10,7 +10,7 @@ The InstaMERN backend leverages **AWS Cloud Services** for various functionaliti
 
 1. Amazon S3
 
-   Description: Amazon S3 is used for storing and serving user-uploaded images, including post images and profile pictures.
+   Description: Amazon S3 is used for storing and serving user-uploaded images, including post images, story images and profile pictures.
 
 2. Amazon SES
 
