@@ -102,7 +102,11 @@ exports.uploadPost = async (req, res, next) => {
       s3.upload(params, async (err, data) => {
         if (err)
           return next(
-            new ErrorProvider(422, "fail", `Post photo couldn't uploaded.`)
+            new ErrorProvider(
+              422,
+              "fail",
+              `Post photo couldn't uploaded: ${err}`
+            )
           );
 
         const url = data.Location;
