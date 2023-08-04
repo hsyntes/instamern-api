@@ -227,7 +227,7 @@ exports.uploadPhoto = async (req, res, next) => {
         .promise();
     } catch (e) {
       // If the object doesn't exist or there's an error during the delete operation, ignore it
-      next(e);
+      next(new ErrorProvider(404, "fail", "Couldn't uploaded your photo."));
     }
 
     try {
