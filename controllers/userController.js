@@ -225,8 +225,9 @@ exports.uploadPhoto = async (req, res, next) => {
       await s3
         .deleteObject({ Bucket: params.Bucket, Key: params.Key })
         .promise();
-    } catch (err) {
+    } catch (e) {
       // If the object doesn't exist or there's an error during the delete operation, ignore it
+      next(e);
     }
 
     try {
