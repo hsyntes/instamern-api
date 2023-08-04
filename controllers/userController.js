@@ -234,7 +234,7 @@ exports.uploadPhoto = async (req, res, next) => {
         if (err)
           // ! 422: Unprocessable Entity
           return next(
-            new ErrorProvider(422, "fail", `Couldn't uploaded photo: ${err}`)
+            new ErrorProvider(422, "fail", "Couldn't uploaded photo")
           );
 
         const url = data.Location;
