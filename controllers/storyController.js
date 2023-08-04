@@ -54,7 +54,7 @@ exports.postStory = async (req, res, next) => {
     // * AWS Parameters
     const params = {
       Bucket: process.env.AWS_BUCKET,
-      ACL: process.env.AWS_ACL,
+      // ACL: process.env.AWS_ACL,
       Key: `stories/${req.user.username}/${new Date(
         Date.now()
       ).toISOString()}.jpg`,
