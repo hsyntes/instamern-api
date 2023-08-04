@@ -211,7 +211,7 @@ exports.uploadPhoto = async (req, res, next) => {
     // * AWS parameters
     const params = {
       Bucket: process.env.AWS_BUCKET,
-      ACL: process.env.AWS_ACL,
+      // ACL: process.env.AWS_ACL,
       Key: `users/${req.user.username}.png`,
       Body: photo,
     };
