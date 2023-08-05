@@ -80,7 +80,7 @@ exports.uploadPost = async (req, res, next) => {
       .resize({
         width: 1080,
         height: 1350,
-        fit: "contain",
+        fit: "cover",
       })
       .toFormat("jpg")
       .jpeg({ quality: 70 })
