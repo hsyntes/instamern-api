@@ -219,16 +219,16 @@ exports.uploadPhoto = async (req, res, next) => {
     // * Uploading to the AWS Cloud
     const s3 = new AWS.S3();
 
-    try {
-      await s3.headObject({ Bucket: params.Bucket, Key: params.Key }).promise();
-      // If the object exists, delete it before uploading the new photo
-      await s3
-        .deleteObject({ Bucket: params.Bucket, Key: params.Key })
-        .promise();
-    } catch (e) {
-      // If the object doesn't exist or there's an error during the delete operation, ignore it
-      next(new ErrorProvider(404, "fail", "Couldn't uploaded your photo."));
-    }
+    // try {
+    //   await s3.headObject({ Bucket: params.Bucket, Key: params.Key }).promise();
+    //   // If the object exists, delete it before uploading the new photo
+    //   await s3
+    //     .deleteObject({ Bucket: params.Bucket, Key: params.Key })
+    //     .promise();
+    // } catch (e) {
+    //   // If the object doesn't exist or there's an error during the delete operation, ignore it
+    //   next(new ErrorProvider(404, "fail", "Couldn't uploaded your photo."));
+    // }
 
     try {
       s3.upload(params, async (err, data) => {
