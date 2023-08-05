@@ -117,32 +117,6 @@ Sotarage users' materials suchs as posts, profile pictures, stories in **AWS Clo
 
 `POST /instamern/stories/upload`: Add a new story by current user's secure token and save it to **AWS Cloud**
 
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/hsyntes/instamern-api
-```
-
-Go to the project directory
-
-```bash
-  cd instamern-api
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server on **production** environment as default.
-
-```bash
-  npm start
-```
-
 ## 🔗 Links
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hsyntes)
