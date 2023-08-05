@@ -29,11 +29,12 @@ exports.makeComment = async (req, res, next) => {
 
     const user = await User.findById(post.postedBy);
 
-    user.notifications.push({
-      notifiedBy: req.user._id,
-      notifiedTo: user._id,
-      notification: "commented your photo.",
-    });
+    if (!user._id.equals(req.user._id))
+      user.notifications.push({
+        notifiedBy: req.user._id,
+        notifiedTo: user._id,
+        notification: "commented your photo.",
+      });
 
     await user.save({ validateBeforeSave: false });
 
