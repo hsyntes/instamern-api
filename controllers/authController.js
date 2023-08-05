@@ -45,7 +45,12 @@ exports.signup = async (req, res, next) => {
       passwordConfirm: req.body.passwordConfirm,
     });
 
-    await new Email(user, "https://instamern.netlify.app/").sendWelcome();
+    try {
+      await new Email(user, "https://instamern.netlify.app/").sendWelcome();
+    } catch (e) {
+      // Ugnore email verification error and proceed
+      console.error(`Email verification error: ${e}`);
+    }
 
     sendToken(
       res,
