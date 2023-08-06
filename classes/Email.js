@@ -12,10 +12,10 @@ module.exports = class Email {
 
   // * Creating transport
   createTransport() {
-    if (process.env.NODE_ENV === "production") {
-      const ses = new AWS.SES();
-      return nodemailer.createTransport({ SES: { ses, aws: AWS } });
-    }
+    if (process.env.NODE_ENV === "production")
+      return nodemailer.createTransport({
+        SES: { ses: new AWS.SES(), aws: AWS },
+      });
 
     return nodemailer.createTransport({
       host: process.env.MAILTRAP_HOST,

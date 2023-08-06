@@ -44,11 +44,6 @@ const tokenExpiredError = () =>
 
 // * Error Handler
 module.exports = async (err, req, res, next) => {
-  // res.status(500).json({
-  //   status: "error",
-  //   err,
-  // });
-
   if (process.env.NODE_ENV === "production") {
     if (err.code === 11000) err = uniqueError(err);
     if (err.name === "ValidationError") err = validationError(err);

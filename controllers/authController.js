@@ -173,8 +173,6 @@ exports.resetPassword = async (req, res, next) => {
       passwordResetTokenExpiresIn: { $gt: Date.now() },
     });
 
-    console.log(user);
-
     if (!user)
       return next(
         new ErrorProvider(

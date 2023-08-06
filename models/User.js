@@ -161,7 +161,6 @@ userSchema.pre("find", function (next) {
 
 userSchema.pre("findOne", function (next) {
   this.populate({ path: "posts" });
-  // this.populate("stories");
   this.find().select("+followings +followers");
 
   next();
