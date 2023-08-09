@@ -16,23 +16,20 @@ const errorController = require("./controllers/errorController");
 const app = express();
 
 // * Handle Cross-Origin Middleware
-const allowedOrigins = [
-  "https://instamern.netlify.app",
-  "http://localhost:3000",
-];
+const allowedOrigins = ["https://instamern.netlify.app"];
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (allowedOrigins.includes(origin) || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (allowedOrigins.includes(origin) || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 
 // * Pug engine
 app.set("view engine", "pug");
