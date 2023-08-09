@@ -16,10 +16,7 @@ const errorController = require("./controllers/errorController");
 const app = express();
 
 // * Handle Cross-Origin Middleware
-const allowedOrigins = [
-  "https://instamern.netlify.app",
-  "http://localhost:3000",
-];
+const allowedOrigins = ["https://instamern.netlify.app"];
 
 app.use(
   cors({
