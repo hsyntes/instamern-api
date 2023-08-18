@@ -67,7 +67,13 @@ exports.signup = async (req, res, next) => {
 exports.login = async (req, res, next) => {
   try {
     if (!req.body.username || !req.body.password)
-      return next(new ErrorProvider(403, "fail", "Please type your username."));
+      return next(
+        new ErrorProvider(
+          403,
+          "fail",
+          "Please type your username and password."
+        )
+      );
 
     const { username } = req.body;
 
