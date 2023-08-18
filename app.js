@@ -37,7 +37,7 @@ app.set("views", path.join(__dirname, "views"));
 
 // * Limitting API requests
 const limit = expressRateLimit({
-  max: 15,
+  max: 100,
   windowsMs: 60 * 60 * 1000,
   mesage: "Too many requests.",
   standartHeaders: true,
