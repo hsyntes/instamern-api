@@ -20,8 +20,8 @@ The InstaMERN backend leverages **AWS Cloud Services** for various functionaliti
 
 - Signup & login with secure token
 - Uploading posts/stories to **AWS Cloud** & load them from **MongoDB**
-- Sending reset links to users' email address with **AWS SES** to reset & update their password more secure
-- Structured users'data more secure with **mongoose Data Modelling** both **referencing** & **embedded**
+- Sending reset links to users' email address with **AWS SES** to reset & update their password
+- Structured users' data more secure with **mongoose Data Modelling** both **referencing** & **embedded**
 - **Encrypting** & **hashing** passwords
 - Email validator via both backend API & **AWS Cloud**
 - Verifying **JSON Web Token**
@@ -34,10 +34,6 @@ The InstaMERN backend leverages **AWS Cloud Services** for various functionaliti
 - Sending JWT via **cokie**
 - Restrict/protect some features by secure token
 - Dedicate environments to **development** and **production**
-
-## Base URL
-
-The base URL for the backend API is https://instamern-3cda0fa07039.herokuapp.com/. All endpoints are relative to this base URL.
 
 ## Authentication
 
